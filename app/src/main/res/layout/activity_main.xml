@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <!-- Calculator Display (Result and Input) - Result aur Input dikhane ki jagah -->
+    <TextView
+        android:id="@+id/result_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/transparent"
+        android:gravity="end"
+        android:maxLines="3"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="64sp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_goneMarginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="HardcodedText" />
+
+    <!-- History Button - Itihas (History) dekhne ka button -->
+    <!-- Constraint sudhaar diya gaya hai -->
+
+    <!-- GridLayout for Buttons (5 rows x 4 columns) - Buttons ke liye grid layout -->
+
+
+    <GridLayout
+        android:id="@+id/button_grid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Default Button Attributes (Common properties for all buttons) -->
+        <!-- Inhe har button par copy kiya gaya hai: -->
+        <!-- android:layout_width="0dp"
+             android:layout_height="90dp"
+             android:layout_columnWeight="1"
+             android:layout_rowWeight="1"
+             android:textSize="32sp"
+             android:gravity="center"
+             android:layout_margin="6dp"
+             android:textColor="#FFFFFF"
+             app:cornerRadius="25dp" -->
+
+        <!-- Row 1: Clear, Backspace, Modulus, Divide -->
+        <!-- Function Buttons (C, ←, %) -->
+        <Button
+            android:id="@+id/button_clear"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#505050"
+            android:text="C"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_backspace"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#505050"
+            android:text="←"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_modulus"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#505050"
+            android:text="%"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Operator Button (÷) -->
+        <Button
+            android:id="@+id/button_divide"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#FF9500"
+            android:gravity="center"
+            android:text="÷"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+        <!-- Row 2: 7, 8, 9, Multiply -->
+        <!-- Number Buttons (7, 8, 9) -->
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="7"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="8"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="9"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Operator Button (×) -->
+        <Button
+            android:id="@+id/button_multiply"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#FF9500"
+            android:gravity="center"
+            android:text="×"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+        <!-- Row 3: 4, 5, 6, Subtract -->
+        <!-- Number Buttons (4, 5, 6) -->
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="4"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="5"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="6"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Operator Button (subtract) -->
+        <Button
+            android:id="@+id/button_subtract"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#FF9500"
+            android:gravity="center"
+            android:text="−"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+        <!-- Row 4: 1, 2, 3, Add -->
+        <!-- Number Buttons (1, 2, 3) -->
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="1"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="2"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="3"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Operator Button (+) -->
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#FF9500"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+        <!-- Row 5: Plus/Minus, 0, Decimal, Equals -->
+        <!-- Function Button (±) -->
+        <Button
+            android:id="@+id/button_plus_minus"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="±"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Number Buttons (0, .) -->
+        <Button
+            android:id="@+id/button_0"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#333333"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/button_decimal"
+            android:layout_width="0dp" android:layout_height="90dp" android:layout_columnWeight="1"
+            android:layout_rowWeight="1" android:textSize="32sp" android:gravity="center"
+            android:layout_margin="6dp" android:textColor="#FFFFFF" app:cornerRadius="25dp"
+            android:backgroundTint="#333333"
+            android:text="."
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Operator Button (=) -->
+        <Button
+            android:id="@+id/button_equals"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:backgroundTint="#FF9500"
+            android:gravity="center"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            app:cornerRadius="25dp"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
